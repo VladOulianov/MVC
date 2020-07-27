@@ -16,7 +16,7 @@ const articleAddController = require('./controllers/articleAdd')
 const homePage = require('./controllers/homePage')
 const articleSingleController = require('./controllers/articleSingle')
 const articlePostController = require('./controllers/articlePost')
-//const articleGetEditerController = require('./controllers/articleGetEditer')
+const articleGetEditerController = require('./controllers/articleGetEditer')
 //const articleEditController = require('./controllers/aticleEdit')
 const contactController = require('./controllers/contactController')
 // user
@@ -87,7 +87,7 @@ app.get ('/', homePage)
 app.get ('/articles/add',auth, articleAddController)
 app.get ('/articles/:id', articleSingleController)
 app.post("/articles/post",auth,articleValidPost, articlePostController)
-//app.get("/articles/editer", auth,articleValidPost, articleGetEditerController)
+app.get("/articles/editer/:id", articleGetEditerController)
 //app.get("/articles/edit", articleEditController)
 
 // User
@@ -98,10 +98,8 @@ app.post('/user/login/auth', userLoginAuth)
 app.get('/user/logout', userLogout)
 
 // Contact
-//app.get ('/contact', contactController)
-app.get("/editer", (req, res) => {
-  res.render("editer")
-})
+app.get ('/contact', contactController)
+
 
 
 // Error 404
