@@ -10,6 +10,7 @@ module.exports = (req,res)=>{
                    _id: article.id,
                    title: article.title,
                    content: article.content,
+                   author: article.author
                    
                 })
             }else {

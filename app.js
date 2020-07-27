@@ -9,6 +9,7 @@ const fileUpload = require('express-fileupload')
 const expressSession = require('express-session')
 const MongoStore = require('connect-mongo')//(expressSession)
 const connectFlash = require('connect-flash')
+const methodOverride = require('method-override')
 
 // Controller //
 // article
@@ -17,7 +18,7 @@ const homePage = require('./controllers/homePage')
 const articleSingleController = require('./controllers/articleSingle')
 const articlePostController = require('./controllers/articlePost')
 const articleGetEditerController = require('./controllers/articleGetEditer')
-//const articleEditController = require('./controllers/aticleEdit')
+const articlePutEditerController = require('./controllers/articlePutEditer')
 const contactController = require('./controllers/contactController')
 // user
 const userCreate = require('./controllers/userCreate')
@@ -49,6 +50,9 @@ app.use(expressSession({
 
 // Statique
 app.use(express.static('public'))
+
+// Override
+app.use(methodOverride("_method"))
 
 // Body-Parser
 app.use(bodyParser.json())
@@ -89,6 +93,7 @@ app.get ('/articles/:id', articleSingleController)
 app.post("/articles/post",auth,articleValidPost, articlePostController)
 app.get("/articles/editer/:id", articleGetEditerController)
 //app.get("/articles/edit", articleEditController)
+app.put('/articles/editer/:id', articlePutEditerController)
 
 // User
 app.get('/user/create', userCreate)
@@ -109,6 +114,6 @@ app.use((req,res)=>{
 
 
 
-app.listen(4008,function(){
-    console.log("le server tourne sur le port 4008");
+app.listen(4010,function(){
+    console.log("le server tourne sur le port 4010");
 })
