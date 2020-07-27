@@ -6,7 +6,7 @@ module.exports = (req,res)=>{
         {_id:req.params.id},
         function(err,article){
             if(!err){
-                res.render("edite", {
+                res.render("editer", {
                    _id: article.id,
                    title: article.title,
                    content: article.content,
