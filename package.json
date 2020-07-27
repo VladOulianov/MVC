@@ -22,5 +22,14 @@
     "handlebars.moment": "^1.0.4",
     "method-override": "^3.0.0",
     "mongoose": "^5.9.25"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VladOulianov/MVC.git"
+  },
+  "bugs": {
+    "url": "https://github.com/VladOulianov/MVC/issues"
+  },
+  "homepage": "https://github.com/VladOulianov/MVC#readme"
 }
