@@ -1,5 +1,5 @@
 const Article = require('../database/models/Article')
-const mongoose = require('mongoose')
+//const mongoose = require('mongoose')
 
 module.exports = (req,res)=>{
     Article.findOne(
